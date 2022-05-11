@@ -4,21 +4,20 @@ import {Routes, Route} from 'react-router-dom';
 import Home from '../../pages/Home';
 import Posts from '../../pages/Posts';
 import Post from "../../pages/Post";
-// import Cart from '../../pages/Cart';
 import Favorites from "../../pages/Favorites";
 import Profile from "../../pages/Profile";
 import Signin from "../../pages/Signin";
 import Signup from "../../pages/Signup";
+import AddPost from "../../pages/AddPost";
 
 
 const Main = ({updFav}) => {
     return (
         <main>
-           {/* <div>Привет</div> */}
            <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/posts" element={<Posts updFav={updFav} />} />
-                {/* <Route path="/posts" element={<Posts />} /> */}
+                <Route path="/addpost" element={<AddPost />} />
                 <Route path="/post/:id" element={<Post/>}/>
                 <Route path="/favorites" element={<Favorites/>}/>
                 <Route path="/profile" element={<Profile/>}/>

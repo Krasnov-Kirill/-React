@@ -23,10 +23,7 @@ export default ({login}) => {
         } else {
             console.log(val);
             api.signup({email: val, password: pwd}).then(ans => {
-                // console.log(ans);
-                // if (ans._id || ans.err.statusCode === 409) {
                     navigation("/signin");
-                // }
             })
         }
     }

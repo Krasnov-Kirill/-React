@@ -9,14 +9,7 @@ import { UserCtx } from "../../context/UserContext";
 import { FavCtx } from "../../context/FavoritesContext";
 
 const Post = (props) => {
-    let st = {
-        backgroundImage: `url(${props.image || pic})`,
-        backgroundSize: "contain",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundColor: "#fff",
-        marginBottom: "20px"
-    };
+   
     const navigate = useNavigate();
     const {setFavorites} = useContext(FavCtx);
     const {user} = useContext(UserCtx);
@@ -26,7 +19,7 @@ const Post = (props) => {
         e.stopPropagation();
         setLike(!like);
         // console.log(like);
-        api.setProductLike(props._id, like)
+        api.setPostLike(props._id, like)
             .then(ans => {
                 console.log(ans);
                 setFavorites(ans);
@@ -39,9 +32,23 @@ const Post = (props) => {
     }
     return (
          <div className="post" onClick={replaceHandler}>
-            <div className="post__img" style={st}></div>
-            <div className="post__title">{props.title}</div>
-            <div className="post__text">{props.text}</div>
+            <div className="post__hendler">
+                <div className="post__name">
+                    {props.author.name}
+                </div>
+                <div className="post__about">
+                    {props.author.about}
+                </div>
+            </div>
+            {/* <div className="post__img" style={st}></div> */}
+            <div className="post__img">
+                <img src={props.image} alt="img" />
+                </div>
+            
+            <div className="post__title">
+                <h3>{props.title}</h3>
+                <p>{props.text}</p>
+            </div>
             <img className="post__like" src={like ? likeTrue : likeFalse} onClick={likeHandler}/>
         </div>
     )

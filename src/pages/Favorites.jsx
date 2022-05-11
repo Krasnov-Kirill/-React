@@ -7,7 +7,7 @@ export default () => {
     return (
         <div>
             <h1>Избранное</h1>
-            <div className="cards-container">
+            <div className="posts-container">
                 {favorites.map(el => <Post key={el._id} {...el}/>)}
             </div>
         </div>

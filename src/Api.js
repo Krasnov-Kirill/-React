@@ -36,7 +36,60 @@ class Api {
             }
         }).then(responseHandler);
     }
-
+    setPostLike(id, like) {
+        return fetch(`${this.path}/posts/likes/${id}`, {
+            method: like ? "PUT" : "DELETE",
+            headers: {
+                authorization: `Bearer ${this.token}`
+            }
+        }).then(responseHandler);
+    }
+    addPost(title, taxt, image, tags) {
+        return fetch(`${this.path}/posts/`, {
+            method: "POST",
+            headers: {
+                authorization: `Bearer ${this.token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "title": title, // тип данных строка, обязательное
+                "text": taxt, // тип данных строка, обязательное
+                "image": image, // тип данных строка
+                "tags": tags //тип данных массив строк
+            })
+        }).then(responseHandler);
+    }
+    signup(body) {
+        return fetch(`${this.path}/signup`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }).then(responseHandler);
+    }
+    login(body) {
+        return fetch(`${this.path}/signin`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }).then(responseHandler);
+    }
+    changeUserProfile(name, about) {
+        return fetch(`${this.path}/users/me`, {
+            method: "PATCH",
+            headers: {
+                authorization: `Bearer ${this.token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                about: about
+            })
+        }).then(responseHandler);
+    }
 }
 
 const config = {

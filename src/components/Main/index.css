@@ -1,5 +1,8 @@
 main {
-    padding: 40px calc(50% - 496px);
+    padding: 40px calc(25% - 496px);
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: minmax(50px, max-content) 10fr minmax(10px, max-content);
 }
 h1 {
     margin: 0;
@@ -7,6 +10,6 @@ h1 {
 }
 .posts-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 20px;
 }

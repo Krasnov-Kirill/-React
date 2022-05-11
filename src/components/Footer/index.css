@@ -1,8 +1,8 @@
 footer {
-    padding: 40px calc(50% - 496px);
+    padding: 40px calc(25% - 496px);
     background-color: #4dd5ff;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-between
 }
 footer h4 {
     margin: 10px;

@@ -11,8 +11,6 @@ import { UserCtx, UserValue } from './context/UserContext';
 import { FavCtx } from './context/FavoritesContext';
 import { ProdCtx } from './context/ProductContext';
 
-
-// const dataPost = data.map(title => <Post title={title}/>);
 const App = () => {
     const [posts, getPosts] = useState([]);
         
@@ -34,7 +32,6 @@ const App = () => {
     }, []);
     
     const [searchText, changeText] = useState("");
-    
     const [user, setUser] = useState(localStorage.getItem("user") || "");
     const [favorites, updFav] = useState([]);
    
@@ -51,8 +48,6 @@ const App = () => {
     }
 
     const setFavorites = (obj) => {
-        // console.log(user);
-        // console.log(obj);
         if (obj.likes.includes(user)) {
             if (!favorites.includes(el => el._id === obj._id)) {
                 updFav([...favorites, obj]);
@@ -69,7 +64,6 @@ const App = () => {
 
         
     return (
-        <BannerCtx.Provider value={BannerValue}>
             <FavCtx.Provider value={{favorites: favorites, setFavorites: setFavorites}}> 
                 <UserCtx.Provider value={{token: token, user: user, setToken: tokenHandler, setUser: userHandler }}>
                     <ProdCtx.Provider value={{
@@ -83,24 +77,12 @@ const App = () => {
                         // setTitle: setTitle,
                         search: searcHandler
                     }}>
-                        <div className="container">
-                            {/* <Header searchText={searchText} changeText={changeText}/> */}
                             <Header likes={favorites.length}/>
                             <Main updFav={updFav}/>
                             <Footer/>
-                        </div>
                     </ProdCtx.Provider>
                 </UserCtx.Provider>
             </FavCtx.Provider>
-        </BannerCtx.Provider>                   
-            // <div className="container">
-            //     <Header searchText={searchText} changeText={changeText}/>
-            //     <Main searchText={searchText}/>
-
-            //     {posts.map(el => <Post text={el.text} key={el._id} image={el.image} title={el.title} />)}
-           
-            //     <Footer/>
-            // </div>
     )     
 }
 
