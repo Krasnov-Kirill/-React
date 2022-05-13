@@ -38,13 +38,14 @@ class Api {
     }
     setPostLike(id, like) {
         return fetch(`${this.path}/posts/likes/${id}`, {
-            method: like ? "PUT" : "DELETE",
+            method: like ? "DELETE" : "PUT",
             headers: {
                 authorization: `Bearer ${this.token}`
             }
         }).then(responseHandler);
     }
-    addPost(title, taxt, image, tags) {
+    // addPost(title, taxt, image, tags) {
+    addPost(title, text, image) {
         return fetch(`${this.path}/posts/`, {
             method: "POST",
             headers: {
@@ -53,10 +54,33 @@ class Api {
             },
             body: JSON.stringify({
                 "title": title, // тип данных строка, обязательное
-                "text": taxt, // тип данных строка, обязательное
+                "text": text, // тип данных строка, обязательное
                 "image": image, // тип данных строка
-                "tags": tags //тип данных массив строк
+                // "tags": tags //тип данных массив строк
             })
+        }).then(responseHandler);
+    }
+    editPost(title, text, image, id) {
+        return fetch(`${this.path}/posts/${id}`, {
+            method: "PATCH",
+            headers: {
+                authorization: `Bearer ${this.token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "title": title, // тип данных строка, обязательное
+                "text": text, // тип данных строка, обязательное
+                "image": image, // тип данных строка
+                // "tags": tags //тип данных массив строк
+            })
+        }).then(responseHandler);
+    }
+    deletePost(id) {
+        return fetch(`${this.path}/posts/${id}`, {
+            method: "DELETE",
+            headers: {
+                authorization: `Bearer ${this.token}`,
+            },
         }).then(responseHandler);
     }
     signup(body) {
@@ -75,6 +99,14 @@ class Api {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(body)
+        }).then(responseHandler);
+    }
+    meProfile() {
+        return fetch(`${this.path}/users/me`, {
+            method: "GET",
+            headers: {
+                authorization: `Bearer ${this.token}`
+            },
         }).then(responseHandler);
     }
     changeUserProfile(name, about) {

@@ -12,7 +12,7 @@ const Posts = ({updFav}) => {
      
     const {posts, text, search} = useContext(ProdCtx);
     const { setFavorites } = useContext(FavCtx);
-    const _data = usePagination(search(posts, text),10);
+    const _data = usePagination(search(posts, text),12);
     const [currentPage, setCurrentPage] = useState(1);
     
     useEffect(() => {
@@ -29,16 +29,19 @@ const Posts = ({updFav}) => {
     }, []);
      
 return (
-        // <div className='post-container'>
-        <div className=''>
-            <h1>Посты</h1>
-            <nav>
-                <Link to="/addpost">
-                    <img src={iconPost} alt="Создать пост"/>
-                </Link>
-            </nav>
-            {text && <div className='search__item'>По запросу <strong>{text}</strong> найдено {search(posts, text).length} постов</div>}
-            <h2>Страница {currentPage}</h2>
+        <div className="">
+            <div className="posts_addpost">
+                <h1>Посты</h1><p></p>
+                <div>Создать пост
+                    <nav>
+                        <Link to="/addpost">
+                            <img src={iconPost} alt="Создать пост"/>
+                        </Link>
+                    </nav>
+                </div>
+            </div>
+                {text && <div className="search__item">По запросу <strong>{text}</strong> найдено {search(posts, text).length} постов</div>}
+            {/* <h2>Страница {currentPage}</h2> */}
             <div className="page-container" >
                     {_data.setPagination()}
             </div>

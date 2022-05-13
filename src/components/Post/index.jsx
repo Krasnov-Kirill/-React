@@ -40,15 +40,14 @@ const Post = (props) => {
                     {props.author.about}
                 </div>
             </div>
-            {/* <div className="post__img" style={st}></div> */}
             <div className="post__img">
                 <img src={props.image} alt="img" />
-                </div>
-            
+            </div>
             <div className="post__title">
                 <h3>{props.title}</h3>
                 <p>{props.text}</p>
             </div>
+            
             <img className="post__like" src={like ? likeTrue : likeFalse} onClick={likeHandler}/>
         </div>
     )

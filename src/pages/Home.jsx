@@ -8,20 +8,22 @@ import iconPost from "../components/Logo/img/addpost.svg";
 
 const Home = () => {
     const {posts} = useContext(ProdCtx);
-    const _data = usePagination(posts, 10);
+    const _data = usePagination(posts, 12);
   
     return (
         <>
             <div className="home">
-                <h1>Все посты учащихся<br/></h1>
-                <p>Интересные и познавательные посты!</p>
-            </div>
-            <div>
-                <nav>
-                    <Link to="/addpost">
-                        <img src={iconPost} alt="Создать пост"/>
-                    </Link>
-                </nav>
+                <div>
+                    <h1>Все посты учащихся<br/></h1>
+                    <p>Интересные и познавательные посты!</p>
+                </div>
+                <div>Создать пост
+                    <nav>
+                        <Link to="/addpost">
+                            <img src={iconPost} alt="Создать пост"/>
+                        </Link>
+                    </nav>
+                </div>
             </div> 
             <div className="posts-container">
                 {_data.current().map(el => (

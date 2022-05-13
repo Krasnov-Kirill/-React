@@ -1,8 +1,9 @@
 main {
-    padding: 40px calc(25% - 496px);
+    padding: 40px calc(50% - 500px);
     min-height: 100%;
     display: grid;
     grid-template-rows: minmax(50px, max-content) 10fr minmax(10px, max-content);
+	background-image: url(http://zornet.ru/_fr/72/0063155.jpg);
 }
 h1 {
     margin: 0;
@@ -12,4 +13,24 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     gap: 20px;
+}
+.page-container {
+	padding-top: 10px;
+	padding-bottom: 5px;
+	display: grid;
+	grid-template-columns: repeat(20, 1fr);
+    gap: 5px;
+}
+.page-container>div {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.page-container>.active {
+	color: #4dd5ff;
 }

@@ -1,24 +1,33 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import api from "../Api";
-// import { UserCtx } from "../../context/UserContext";
+
 
 export default () => {
-
+    let {id} = useParams();
     const navigation = useNavigate();
     const st = {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center"
     }
-    
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
     const [image, setImage] = useState("");
 
+    useEffect(()=> {
+        api.getSinglePost(id).then(data => {
+           setTitle(data.title);
+           setText(data.text);
+           setImage(data.image);
+        })
+    }, []);
+    
+
     function submitForm(event) {
         event.preventDefault();
-        api.addPost(title, text, image).then(data => {
+        api.editPost(title, text, image, id).then(data => {
             navigation("/");
             document.location.reload();
         });
@@ -40,11 +49,12 @@ export default () => {
         // <div style={st}>
             <div className="addpostForm">
                 <form className="auth" onSubmit={ submitForm }>
-                    <input type="text" placeholder="Title" name="title" required onInput={ editTitle } />
-                    <input type="text" placeholder="Text" name="text" required onInput={ editText } />
-                    <input type="text" placeholder="Img" name="image" required onInput={ editImage } />
+                    <input type="text" value={ title } placeholder="Title" name="title" required onInput={ editTitle } />
+                    <input type="text" value={ text } placeholder="Text" name="text" required onInput={ editText } />
+                    <input type="text" value={ image } placeholder="Img" name="image" required onInput={ editImage } />
                     {/* <input type="text" placeholder="tags" name="tags" required onInput="tags"/> */}
                     <button type="submit">Отправить пост</button>
+                    {/* <button type="submit" >Отправить пост</button> */}
                 </form>
             </div>
         // </div>

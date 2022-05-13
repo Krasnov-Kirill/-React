@@ -9,6 +9,7 @@ import Profile from "../../pages/Profile";
 import Signin from "../../pages/Signin";
 import Signup from "../../pages/Signup";
 import AddPost from "../../pages/AddPost";
+import ChangePost from "../../pages/ChangePost";
 
 
 const Main = ({updFav}) => {
@@ -19,6 +20,7 @@ const Main = ({updFav}) => {
                 <Route path="/posts" element={<Posts updFav={updFav} />} />
                 <Route path="/addpost" element={<AddPost />} />
                 <Route path="/post/:id" element={<Post/>}/>
+                <Route path="/changepost/:id" element={<ChangePost/>}/>
                 <Route path="/favorites" element={<Favorites/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/signin" element={<Signin/>}/>

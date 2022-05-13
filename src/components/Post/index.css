@@ -2,37 +2,32 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: rgba(0, 0, 0, 0.85);
     font-size: 14px;
-    font-variant: tabular-nums;
-    line-height: 1.5715;
-    list-style: none;
-    font-feature-settings: 'tnum';
     position: relative;
-    background: #fff;
+    background: #86d8f1;
     border-radius: 2px;
-    display: grid;
-    grid-template-rows: minmax(0px, max-content) 10fr minmax(0px, max-content);
-    grid-template-columns: minmax(50px, max-content);
+    cursor: pointer;
 }
-.post__img {
-    /* height: 120%; */
-    
+.post__img>img {
     overflow: hidden;
     width: 1000px;
     max-width: 100%;
+    padding: 3px;
+    border: #fff;
+}
+.post__img {
+    margin: 0;
+    padding: 0;
 }
 .post__title{
-    /* overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;  */
+    border-style: solid;
+    outline: 20px solid #fff;
 }
 .post__text {
-    /* overflow: hidden;
-    white-space: nowrap;
+    margin: 0;
+    padding: 0;
     text-overflow: ellipsis;
-    font-weight: bold; */
-    font-size: 0.8em;
+    outline: #fff;
 }
 .post__like {
     position: absolute;
@@ -41,20 +36,37 @@
     z-index: 1;
 }
 .post__title {
-    /* overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-weight: bold; */
+    margin: 3px;
+    padding: 0;
     font-size: 1.0em;
+    padding: 0px 24px;
+    outline: #fff;
+    border: #fff;
+    background-color: #fff;
+}
+.post__title>h3 {
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0;
+    border-style: ridge;
 }
 .post__hendler {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
+    padding: 24px 24px 10px 24px;
     overflow: hidden;
+    box-sizing: content-box;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: rgb(23, 54, 139) 1px 0 10px;;
+    outline: #fff;
 }
 .post__about {
-    color: darkgray;
+    color: #fff;
     font-size: small;
+    text-shadow: rgb(23, 54, 139) 1px 0 10px;
+    outline: #fff;
+}
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline
 }

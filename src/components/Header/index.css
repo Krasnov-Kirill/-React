@@ -1,10 +1,12 @@
 header {
-    padding: 40px calc(25% - 496px);
+    padding: 40px calc(50% - 500px);
     background-color: #4dd5ff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 80px;
+    width: 100%;
+    min-height: 68px;
 }
 nav {
     display: flex;

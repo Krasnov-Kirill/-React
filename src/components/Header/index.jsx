@@ -27,7 +27,7 @@ const Header = ({likes}) => {
                         {likes}</Link>
                 </nav>
             </header>
-            <div style={{display: "flex", flexDirection: "column", gap: "20px"}}>
+            <div className="search__div">
                 {text && search().length && search().map((el, i) => <Link key={i} to={"/posts/" + el.id}>{el.title}</Link>)}
             </div>
         </>
