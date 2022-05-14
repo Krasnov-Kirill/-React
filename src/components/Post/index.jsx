@@ -1,6 +1,5 @@
 import React, {useState, useContext} from "react";
 import "./index.css";
-import pic from "../Logo";
 import likeTrue from "../../assets/like_fill.svg";
 import likeFalse from "../../assets/like_stroke.svg";
 import {useNavigate} from "react-router-dom";

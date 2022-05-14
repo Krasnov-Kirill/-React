@@ -12,7 +12,6 @@ export const UserValue = {
     user: localStorage.getItem("user") || "",
     setUser: (id) => {
         console.log(this.user);
-        // this.user = id;
         localStorage.setItem("user", id);
     }
 }

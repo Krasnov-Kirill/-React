@@ -1,5 +1,4 @@
 const responseHandler = (res) => {
-    // console.log(res);
     return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
 }
 
@@ -44,7 +43,6 @@ class Api {
             }
         }).then(responseHandler);
     }
-    // addPost(title, taxt, image, tags) {
     addPost(title, text, image) {
         return fetch(`${this.path}/posts/`, {
             method: "POST",

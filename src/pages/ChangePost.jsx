@@ -46,17 +46,17 @@ export default () => {
     }
 
     return (
-        // <div style={st}>
+        <div>
+            <h3 className="addpostP">Изменить пост</h3>
             <div className="addpostForm">
+                
                 <form className="auth" onSubmit={ submitForm }>
-                    <input type="text" value={ title } placeholder="Title" name="title" required onInput={ editTitle } />
-                    <input type="text" value={ text } placeholder="Text" name="text" required onInput={ editText } />
-                    <input type="text" value={ image } placeholder="Img" name="image" required onInput={ editImage } />
-                    {/* <input type="text" placeholder="tags" name="tags" required onInput="tags"/> */}
-                    <button type="submit">Отправить пост</button>
-                    {/* <button type="submit" >Отправить пост</button> */}
+                    Заголовок<input type="text" value={ title } placeholder="Title" name="title" required onInput={ editTitle } />
+                    Текст поста<input type="text" value={ text } placeholder="Text" name="text" required onInput={ editText } />
+                    url картинки<input type="text" value={ image } placeholder="Img" name="image" required onInput={ editImage } />
+                    <button className="submit-button" type="submit">Отправить пост</button>
                 </form>
             </div>
-        // </div>
+        </div>
     )
 }

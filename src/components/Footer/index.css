@@ -2,7 +2,8 @@ footer {
     padding: 40px calc(50% - 500px);
     background-color: #4dd5ff;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    height: 176px;
 }
 footer h4 {
     margin: 10px;

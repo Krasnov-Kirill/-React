@@ -1,17 +1,14 @@
 import React, {useEffect, useState} from "react";
-import {Routes, Route, Link} from "react-router-dom";
-import api from "./Api";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import Post from "./components/Post";
 
-import { BannerCtx, BannerValue } from './context/BannerContext';
 import { UserCtx, UserValue } from './context/UserContext';
 import { FavCtx } from './context/FavoritesContext';
 import { ProdCtx } from './context/ProductContext';
 
 const App = () => {
+        
     const [posts, getPosts] = useState([]);
         
     useEffect(() => {

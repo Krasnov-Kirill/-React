@@ -39,7 +39,7 @@ body {
 }
 .post_row {
 	display: grid;
-    grid-template-columns: minmax(400px, 600px) minmax(200px, 300px);
+    grid-template-columns: minmax(400px, 600px) minmax(200px, 390px);
     gap: 5px;
     overflow: hidden;
 }
@@ -101,4 +101,12 @@ body {
     margin-right: 3px;
     padding: 0;
     border-style: ridge;
+}
+.addpostP {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button {
+    padding: 7px 0;
 }

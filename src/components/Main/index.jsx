@@ -13,8 +13,12 @@ import ChangePost from "../../pages/ChangePost";
 
 
 const Main = ({updFav}) => {
+    let st = {
+        height: `${window.innerHeight - 299}px`,
+    }
+
     return (
-        <main>
+        <main style={st}>
            <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/posts" element={<Posts updFav={updFav} />} />

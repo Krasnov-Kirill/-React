@@ -1,10 +1,10 @@
 form.auth {
     background: #86d8f1;
-    padding: 50px calc(50% - 130px);
+    padding: 50px calc(50% - 150px);
 }
 .auth>button {
-    /* border: none; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    border-style: ridge;
 }

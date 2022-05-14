@@ -46,7 +46,6 @@ const Post = () => {
                                 <h3>{ "author" in post ? post.title : "" }</h3>
                                 <p>{ "author" in post ? post.text : "" }</p>
                                 <p>{ "author" in post ? post.tags : "" }</p>
-                                <p>{id}</p>
                             </div>
                         </div>
                     </div>

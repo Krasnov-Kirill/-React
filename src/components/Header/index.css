@@ -6,7 +6,7 @@ header {
     align-items: center;
     gap: 80px;
     width: 100%;
-    min-height: 68px;
+    height: 123px;
 }
 nav {
     display: flex;

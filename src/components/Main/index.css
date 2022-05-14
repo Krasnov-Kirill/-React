@@ -1,9 +1,8 @@
 main {
     padding: 40px calc(50% - 500px);
-    min-height: 100%;
-    display: grid;
     grid-template-rows: minmax(50px, max-content) 10fr minmax(10px, max-content);
 	background-image: url(http://zornet.ru/_fr/72/0063155.jpg);
+	overflow: auto;
 }
 h1 {
     margin: 0;
